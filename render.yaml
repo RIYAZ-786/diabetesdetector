@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: diabetes-app
+    env: python
+    buildCommand: ""
+    startCommand: python app.py

@@ -1,0 +1,371 @@
+/* ---------------------- Global Reset ---------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url("../static/home.jpeg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* ------------------ Fullscreen Welcome -------------------- */
+.fullscreen-welcome {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* optional overlay */
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  color: greenyellow;
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 200px;
+}
+
+/* -------------------- Window Frame ------------------------ */
+.window-frame {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 100vh; /* Push below welcome */
+  border: 1px solid #666;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+  background-color: rgba(255, 255, 255, 0.95); /* Optional transparent bg */
+  border-radius: 12px;
+  padding: 20px;
+}
+.title{
+  margin-top: 25px;
+  font-size: 25px;
+}
+
+/* ---------------------- Title Bar ------------------------- */
+.title-bar {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(#c3c3c3, #f0f0f0);
+  padding: 5px 10px;
+  font-weight: bold;
+  border-bottom: 1px solid #666;
+}
+
+/* ----------------------- Layout --------------------------- */
+.container {
+  flex: 1;
+  display: flex;
+  overflow: auto;
+}
+
+/* ---------------------- Sidebar --------------------------- */
+.sidebar {
+  width: 30%;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* --------------------- Converter -------------------------- */
+.converter {
+  margin-top: 40px;
+}
+
+.converter input {
+  width: 80px;
+  margin-right: 5px;
+}
+
+.converter button {
+  margin-top: 5px;
+  padding: 5px 10px;
+}
+
+/* --------------------- Main Panel ------------------------- */
+.main {
+  width: 70%;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+.main h3 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* ---------------------- Form Grid ------------------------- */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-grid label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e0e0e0;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+input, select {
+  margin-left: 10px;
+  width: 120px;
+  padding: 4px;
+  font-size: 14px;
+}
+
+/* ------------------ Model Buttons ------------------------- */
+.model-buttons {
+  margin-top: 20px;
+}
+
+.model-buttons button {
+  margin: 5px;
+  padding: 6px 12px;
+}
+
+/* -------------------- Result Section ---------------------- */
+.result {
+  margin-top: 20px;
+}
+
+.diagnose {
+  background-color: darkred;
+  color: yellow;
+  padding: 6px 12px;
+  font-weight: bold;
+}
+
+/* --------------------- Dark Mode -------------------------- */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .title-bar {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+body.dark-mode .container {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .sidebar {
+  background-color: #2b2b2b;
+  color: #fff;
+}
+
+body.dark-mode .main {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode button {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+/* Dark mode toggle */
+#theme-toggle {
+  margin-top: 15px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode #theme-toggle {
+  color: #ffd700;
+}
+
+body.dark-mode #theme-toggle:hover {
+  color: #ffeb3b;
+}
+
+
+.banner-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scroll-button {
+  margin-top: 18px;
+  padding: 12px 24px;
+  font-size: 18px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-button:hover {
+  background-color: #0056b3;
+}
+
+/* Optional: smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+.diabetes-description {
+  max-width: 800px;
+  margin-top: 30px;
+  margin-left: 240px;
+  margin-right: 200px;
+  color: #f1f1f1;
+  font-size: 20px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .close-button {
+  color: #fff;
+}
+
+.close-button:hover {
+  color: red;
+}
+
+.model-btn.selected {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+}
+
+
+#diagnosis-result {
+  font-size: 18px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.positive-result {
+  color: red;
+}
+
+.negative-result {
+  color: green;
+}
+
+.error-result {
+  color: black;
+}
+
+
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  z-index: 100;
+  background-color: #0a84ff;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s;
+}
+
+#scrollTopBtn:hover {
+  background-color: #005bb5;
+}
+.app-footer {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  padding: 30px 20px 15px;
+  font-size: 14px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-left h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #0a84ff;
+}
+
+.footer-left p {
+  max-width: 300px;
+}
+
+.footer-right .footer-links {
+  list-style: none;
+  padding: 0;
+  margin-right: 100px;
+}
+
+.footer-right .footer-links li {
+  margin-bottom: 10px;
+ display: inline-block;
+
+}
+
+.footer-right .footer-links a {
+  margin-right: 50px;
+  color: #f0f0f0;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-right .footer-links a:hover {
+  color: #0a84ff;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid #333;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #999;
+}
